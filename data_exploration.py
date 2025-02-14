@@ -10,8 +10,8 @@ print("classification head")
 print(classification_df.head())
 
 
-span_lengths = span_detection_df["content"].str.len()
-classification_lengths = classification_df["content"].str.len()
+span_lengths = span_detection_df["content"].str.split().str.len()
+classification_lengths = classification_df["content"].str.split().str.len()
 
 print("🔤 Span Detection - Max Length:", span_lengths.max(), "Min Length:", span_lengths.min(), "Total Entries:", len(span_detection_df))
 print("🕵️‍ ️Technique Classification - Max Length:", classification_lengths.max(), "Min Length:", classification_lengths.min(), "Total Entries:", len(classification_df))
